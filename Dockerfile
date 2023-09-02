@@ -34,4 +34,5 @@ FROM alpine:latest
 COPY --from=build /home/serf /bin/serf
 RUN addgroup -g 1000 serf && adduser --uid 1000 -S serf -G serf
 USER 1000
-CMD ["/bin/serf", "agent"]
+ENTRYPOINT ["/bin/serf"]
+CMD ["agent"]
